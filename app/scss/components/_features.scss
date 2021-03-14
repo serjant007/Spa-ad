@@ -1,0 +1,113 @@
+.section-features {
+  display: flex;
+  justify-content: center;
+  background: url(../../img/clouds.svg) no-repeat 50% 50%;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    margin-bottom: 92px;
+    font-weight: $fw-medium;
+    font-size: 24px;
+  }
+
+  .features-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0 0 92px;
+    padding: 0;
+    text-align: center;
+
+    @media (max-width: 1025px) {
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      position: relative;
+      flex-basis: 20%;
+      @media (max-width: 600px) {
+        flex-basis: 45%;
+      }
+      &:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        right: 107%;
+        top: 50%;
+        width: 28px;
+        height: 1px;
+        background-color: #dae4fe;
+        @media (max-width: 800px) {
+          display: none;
+        }
+      }
+
+      &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 33px;
+        border-radius: 100%;
+        width: 69px;
+        height: 69px;
+        background-color: #f1f5ff;
+      }
+
+      &-title {
+        margin-bottom: 25px;
+        font-weight: $fw-bold;
+        font-size: $fs-md;
+        color: #4074f8;
+      }
+
+      &-text {
+        margin: 0 auto;
+        width: 140px;
+        height: 102px;
+        font-size: $fs-sm;
+        line-height: 19px;
+        color: #adb3cb;
+      }
+    }
+  }
+
+  .section-inner {
+    @media (max-width: 1025px) {
+      .subtitle {
+        margin-bottom: 28px;
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .or-block {
+      position: relative;
+      padding: 0 48px;
+      font-weight: $fw-medium;
+      font-size: $fs-sm;
+      color: #adb3cb;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        right: 15%;
+        top: 50%;
+        width: 15px;
+        height: 1px;
+        background-color: #dae4fe;
+      }
+      &::after {
+        left: 15%;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.section-get-started {
+  background-image: url(../../img/get-started-clouds1.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #5e80ff;
+
+  h2,
+  .subtitle {
+    color: #fff;
+  }
+
+  .get-started-text {
+    margin: 0 auto 60px;
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 29px;
+    text-align: center;
+    color: #fff;
+
+    @media (max-width: 1025px) {
+      margin: 0 auto 30px;
+    }
+  }
+
+  .btns {
+    display: flex;
+    justify-content: center;
+
+    .btn--no-bg {
+      font-weight: $fw-medium;
+      font-size: 13px;
+      color: #c7d3ff;
+
+      &:hover {
+        border: 1px solid #d1d1e4;
+        color: #fff;
+        background-color: darken(#6888ff, 2%);
+      }
+    }
+  }
+}
