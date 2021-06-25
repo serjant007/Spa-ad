@@ -1,42 +1,70 @@
 .section-header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  background-color: #fff;
+
+  &--active::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &--active {
+    &::before {
+      display: block;
+    }
+  }
 
   .section-inner {
     padding: 20px 0;
 
     @media (max-width: 991px) {
+      padding: 12px 0 11px 0;
       width: 90%;
     }
   }
-}
 
-.main-navigation {
-  display: flex;
-  align-items: center;
-
-  &__inner-wrap {
+  .main-navigation {
     display: flex;
-    flex-grow: 1;
     align-items: center;
-    justify-content: space-between;
-    margin-left: $base * 18;
 
-    .nav {
-      margin-right: auto;
-    }
+    &__inner-wrap {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: $base * 18;
 
-    .section-header & {
+      .nav {
+        margin-right: auto;
+      }
+
       @media (max-width: 991px) {
         position: absolute;
         left: 0;
         right: 0;
-        top: 100%;
+        top: 0;
         z-index: 4;
         display: none;
         flex-direction: column;
         margin-left: 0;
-        padding: 20px;
+        padding: 50px 20px 20px 20px;
         background-color: #fff;
+
+        &--active {
+          display: flex;
+          .section-header::before {
+            display: block;
+          }
+        }
 
         .socials,
         .btn-wrapper,
@@ -49,6 +77,7 @@
 }
 
 .logo {
+  z-index: 6;
   &__link {
     display: block;
     border-radius: 100%;

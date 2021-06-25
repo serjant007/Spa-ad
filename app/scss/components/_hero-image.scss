@@ -14,6 +14,10 @@
     bottom: 28px;
     transform: translateX(-50%);
   }
+
+  .swiper-pagination-bullet {
+    cursor: pointer;
+  }
 }
 
 .slider-hero-image {

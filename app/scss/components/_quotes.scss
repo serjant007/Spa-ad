@@ -1,5 +1,34 @@
 .section-quotes {
+  overflow: hidden;
   background: linear-gradient(#eaf0ff, #f6f9ff);
+
+  @media (max-width: 1025px) {
+    height: 380px;
+  }
+
+  @media (max-width: 730px) {
+    height: 400px;
+  }
+
+  @media (max-width: 700px) {
+    height: 420px;
+  }
+
+  @media (max-width: 700px) {
+    height: 480px;
+  }
+
+  @media (max-width: 426px) {
+    height: 500px;
+  }
+
+  @media (max-width: 353px) {
+    height: 520px;
+  }
+
+  @media (max-width: 340px) {
+    height: 540px;
+  }
 
   .section-inner {
     display: flex;
@@ -9,14 +38,18 @@
       padding: 20px 0;
     }
 
-    @media (max-width: 374px) {
+    @media (max-width: 680px) {
       flex-direction: column;
+      align-items: center;
     }
   }
 
   &__left,
   &__right {
-    flex-basis: 45%;
+    width: 45%;
+    @media (max-width: 680px) {
+      width: 80%;
+    }
     h2 {
       margin-bottom: 30px;
     }
@@ -40,6 +73,10 @@
     font-weight: $fw-medium600;
     font-size: 12px;
     line-height: 22px;
+    @media (max-width: 680px) {
+      max-width: fit-content;
+      margin-bottom: 10px;
+    }
     @media (max-width: 374px) {
       max-width: 370px;
     }
@@ -50,43 +87,147 @@
     font-weight: $fw-medium;
     font-size: 36px;
   }
+}
 
-  .slider-quotes {
-    @include list-null();
+.slider-quotes-container {
+  margin-bottom: 60px;
+  width: 40vw;
 
-    &__item {
-      position: relative;
-      margin-bottom: 80px;
-      border: 1px solid #d8e3fe;
-      padding: 40px 72px;
+  @media (max-width: 1120px) {
+    height: 87%;
+  }
 
-      @media (max-width: 1025px) {
-        padding: 40px;
-      }
+  @media (max-width: 940px) {
+    height: 88%;
+  }
 
-      @media (max-width: 500px) {
-        padding: 30px 15px;
-      }
+  @media (max-width: 730px) {
+    margin-bottom: 45px;
+    height: 93%;
+  }
 
-      &-text {
-        box-shadow: 0 5px 50px #f3f5fa;
-        font-size: 14px;
-        line-height: 24px;
-        color: #676f95;
-      }
+  @media (max-width: 680px) {
+    margin-bottom: 0;
+    width: 80vw;
+  }
 
-      &-photo {
-        position: absolute;
-        left: 50%;
-        top: 100%;
-        overflow: hidden;
-        margin-top: -31px;
-        border-radius: 50%;
-        width: 62px;
-        height: 62px;
-        background-color: #fff;
-        transform: translateX(-50%);
-      }
+  @media (max-width: 426px) {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 353px) {
+    margin-bottom: 30px;
+  }
+
+}
+
+.slider-quotes {
+  display: flex;
+  height: 190px;
+  @include list-null();
+
+
+  &__item {
+    position: relative;
+    padding: 40px;
+    height: 40%;
+    max-width: 20vw;
+    box-shadow: 0 0.25rem 3rem #cbd5f0;
+    background-color: #fff;
+    opacity: 0.5;
+    transition: opacity $transition;
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+
+    @media (max-width: 1386px) {
+      height: 50%;
+    }
+
+    @media (max-width: 1120px) {
+      height: 60%;
+    }
+
+    @media (max-width: 1025px) {
+      padding: 40px 40px 60px 40px;
+    }
+
+    @media (max-width: 730px) {
+      height: 75%;
+    }
+
+    @media (max-width: 700px) {
+      height: 85%;
+    }
+
+    @media (max-width: 680px) {
+      height: 45%;
+      max-width: 35vw;
+    }
+
+    @media (max-width: 545px) {
+      height: 50%;
+      max-width: 45vw;
+    }
+
+    @media (max-width: 426px) {
+      height: 75%;
+      max-width: 40vw;
+    }
+    @media (max-width: 353px) {
+      height: 85%;
+    }
+    @media (max-width: 340px) {
+      height: 100%;
+      max-width: 35vw;
+    }
+
+
+    &-text {
+      font-size: 14px;
+      line-height: 24px;
+      color: #676f95;
+    }
+
+    &-photo {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      margin-top: -31px;
+      border-radius: 50%;
+      width: 62px;
+      height: 62px;
+      background-color: #fff;
+      transform: translateX(-50%);
     }
   }
+
+  @media (max-width: 1386px) {
+    padding: 0 0 20px 0;
+  }
+
+  @media (max-width: 730px) {
+    padding: 0 0 50px 0;
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 0 70px 0;
+  }
+
+  @media (max-width: 545px) {
+    padding-bottom: 85px;
+  }
+
+  @media (max-width: 353px) {
+    padding-bottom: 105px;
+  }
+
+  @media (max-width: 340px) {
+    padding-bottom: 132px;
+  }
+}
+
+.swiper-pagination-bullet {
+  margin: 0 4px;
 }

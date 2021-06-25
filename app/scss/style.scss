@@ -5,7 +5,17 @@
 body {
   @include roboto;
 
+  padding-top: 65px;
   color: #8d96bd;
+}
+
+.body--active {
+  overflow: hidden;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
 }
 
 .section-outer {
@@ -117,6 +127,7 @@ body {
     }
 
     @media (max-width: 991px) {
+      z-index: 6;
       display: block;
       margin-left: auto;
     }
